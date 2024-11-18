@@ -122,7 +122,7 @@ def generate_response_with_database_and_visualization(prompt, json_database, csv
     ]
 
     # Generate the response
-    response = ollama.chat(model='qwen2.5:0.5b', stream=True, messages=input_messages)
+    response = ollama.chat(model='llama2:7b', stream=True, messages=input_messages)
     for partial_resp in response:
         token = partial_resp["message"]["content"]
         st.session_state["full_message"] += token
